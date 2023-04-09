@@ -1,0 +1,155 @@
+plugins {
+    id 'eclipse'
+    id 'maven-publish'
+    id 'net.minecraftforge.gradle' version '5.1.+'
+    id 'org.parchmentmc.librarian.forgegradle' version '1.+'
+}
+
+version = project.mod_version
+group = project.maven_group
+archivesBaseName = project.archives_base_name
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
+minecraft {
+    mappings channel: 'parchment', version: '2022.11.27-1.19.2'
+
+    runs {
+        client {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            property 'forge.enabledGameTestNamespaces', 'everlastingcompat'
+
+            mods {
+                everlastingcompat {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        server {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            property 'forge.enabledGameTestNamespaces', 'everlastingcompat'
+
+            mods {
+                everlastingcompat {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        gameTestServer {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            property 'forge.enabledGameTestNamespaces', 'everlastingcompat'
+
+            mods {
+                everlastingcompat {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        data {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            args '--mod', 'everlastingcompat', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+
+            mods {
+                everlastingcompat {
+                    source sourceSets.main
+                }
+            }
+        }
+    }
+}
+
+sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+repositories {
+    maven {
+        name = 'Theillusivec4 maven'
+        url = "https://maven.theillusivec4.top/"
+    }
+    maven {
+        name = 'Blamejared maven'
+        url = "https://maven.blamejared.com"
+    }
+    maven {
+        name = "Progwml6 maven"
+        url = "https://dvs1.progwml6.com/files/maven/"
+    }
+    maven {
+        name = "ModMaven"
+        url = "https://modmaven.dev"
+    }
+    maven {
+        name = "CurseMaven"
+        url = 'https://www.cursemaven.com'
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+    maven {
+        name = 'Jitpack maven'
+        url = 'https://jitpack.io'
+    }
+
+}
+
+dependencies {
+    minecraft "net.minecraftforge:forge:${project.minecraft_version}-${project.forge_version}"
+
+    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${project.jei_version}")
+    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${project.jei_version}")
+    runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${project.jei_version}")
+
+    implementation fg.deobf("curse.maven:everlastingabilities-248353:${project.everlasting_abilities_version}")
+    implementation fg.deobf("curse.maven:cyclopscore-232758:${project.cyclops_core_version}")
+
+    compileOnly fg.deobf("curse.maven:alexsmobs-426558:${project.alexs_mobs_version}")
+    compileOnly fg.deobf("curse.maven:apotheosis-313970:${project.apotheosis_version}")
+    compileOnly fg.deobf("curse.maven:arsnouveau-401955:${project.ars_nouveau_version}")
+    compileOnly fg.deobf("curse.maven:arselemental-561470:${project.ars_elemental_version}")
+    compileOnly fg.deobf("curse.maven:cyclic-239286:${project.cyclic_version}")
+    compileOnly fg.deobf("curse.maven:deeperdarker-659011:${project.deeper_darker_version}")
+}
+
+jar {
+    manifest {
+        attributes([
+                "Specification-Title"     : "everlastingcompat",
+                "Specification-Vendor"    : "ianm1647",
+                "Specification-Version"   : "0.0.1", // We are version 1 of ourselves
+                "Implementation-Title"    : project.name,
+                "Implementation-Version"  : project.jar.archiveVersion,
+                "Implementation-Vendor"   : "ianm1647",
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
+    }
+}
+
+jar.finalizedBy('reobfJar')
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifact jar
+        }
+    }
+    repositories {
+        maven {
+            url "file://${project.projectDir}/mcmodsrepo"
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}

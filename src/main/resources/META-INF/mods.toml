@@ -1,0 +1,37 @@
+modLoader="javafml"
+loaderVersion="[43,)"
+license="MIT"
+[[mods]]
+modId="everlastingcompat"
+version="${file.jarVersion}"
+displayName="Everlasting Abilities Compat"
+logoFile="logo.png"
+credits="The creators of Everlasting Abilities"
+authors="ianm1647"
+description='''
+Addon mod for Everlasting Abilities that adds compat for other modded potion effects
+'''
+[[dependencies.everlastingcompat]]
+    modId="forge"
+    mandatory=true
+    versionRange="[43,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.everlastingcompat]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.19.2,1.20)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.everlastingcompat]]
+    modId="cyclopscore"
+    mandatory=true
+    versionRange="[1.18.2,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.everlastingcompat]]
+    modId="everlastingabilities"
+    mandatory=true
+    versionRange="[1.8.2,)"
+    ordering="NONE"
+    side="BOTH"
