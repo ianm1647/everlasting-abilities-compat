@@ -33,6 +33,11 @@
   "ability.everlastingabilities.static_charged": "Static Charged",
   "ability.everlastingabilities.static_charged.info": "Causes lightning to attack surrounding entities after a certain duration",
 
+  "ability.everlastingabilities.relief": "Relief",
+  "ability.everlastingabilities.relief.info": "If incoming damage is greater than the effect level, it will heal you",
+  "ability.everlastingabilities.worsening": "Worsening",
+  "ability.everlastingabilities.worsening.info": "If incoming damage is greater than the effect level, it will hurt effected",
+
   "ability.everlastingabilities.swim_speed": "Swim Speed",
   "ability.everlastingabilities.swim_speed.info": "Double your current swim speed",
   "ability.everlastingabilities.anti_gravity": "Anti-Gravity",
@@ -57,5 +62,27 @@
   "ability.everlastingabilities.butterfingers.info": "Chance to drop items while moving or attacking",
 
   "ability.everlastingabilities.sculk_affinity": "Sculk Affinity",
-  "ability.everlastingabilities.sculk_affinity.info": "Prevents the user from causing vibrations"
+  "ability.everlastingabilities.sculk_affinity.info": "Prevents the user from causing vibrations",
+
+  "ability.everlastingabilities.luminance": "Luminance",
+  "ability.everlastingabilities.luminance.info": "Makes the user emit light",
+
+  "ability.everlastingabilities.stasis": "Stasis",
+  "ability.everlastingabilities.stasis.info": "Makes surrounding entities unable to move",
+
+  "ability.everlastingabilities.ender_infection": "Ender Infection",
+  "ability.everlastingabilities.ender_infection.info": "Causes damage and nausea over time to surrounding entities, also spawns endermites over time on effected",
+
+  "ability.everlastingabilities.insomnia": "Insomnia",
+  "ability.everlastingabilities.insomnia.info": "Increases the insomnia timer by 1 day worth per level",
+  "ability.everlastingabilities.repellence": "Repellence",
+  "ability.everlastingabilities.repellence.info": "Inflicts poison on mobs that physically touch the user",
+  "ability.everlastingabilities.restfulness": "Restfulness",
+  "ability.everlastingabilities.restfulness.info": "Decreases the insomnia timer by 1 day worth per level",
+  "ability.everlastingabilities.vibing": "Vibing",
+  "ability.everlastingabilities.vibing.info": "Inflicts regeneration on mobs that physically touch the effected",
+
+  "ability.everlastingabilities.thorns": "Thorns",
+  "ability.everlastingabilities.thorns.info": "Causes damage to enemies when they attack you"
+
 }

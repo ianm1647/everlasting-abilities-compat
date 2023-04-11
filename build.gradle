@@ -115,10 +115,16 @@ dependencies {
 
     compileOnly fg.deobf("curse.maven:alexsmobs-426558:${project.alexs_mobs_version}")
     compileOnly fg.deobf("curse.maven:apotheosis-313970:${project.apotheosis_version}")
-    compileOnly fg.deobf("curse.maven:arsnouveau-401955:${project.ars_nouveau_version}")
     compileOnly fg.deobf("curse.maven:arselemental-561470:${project.ars_elemental_version}")
+    compileOnly fg.deobf("curse.maven:arsnouveau-401955:${project.ars_nouveau_version}")
+    compileOnly fg.deobf("curse.maven:atmospheric-362393:${project.atmospheric_version}")
     compileOnly fg.deobf("curse.maven:cyclic-239286:${project.cyclic_version}")
     compileOnly fg.deobf("curse.maven:deeperdarker-659011:${project.deeper_darker_version}")
+    compileOnly fg.deobf("curse.maven:infernalexp-395078:${project.infernalexp_version}")
+    compileOnly fg.deobf("curse.maven:phantasmic-479296:${project.phantasmic_version}")
+    compileOnly fg.deobf("curse.maven:unusualend-617757:${project.unusualend_version}")
+    compileOnly fg.deobf("curse.maven:upgrade_aquatic-326895:${project.upgrade_aquatic_version}")
+    compileOnly fg.deobf("curse.maven:windswept-636321:${project.windswept_version}")
 }
 
 jar {

@@ -3,12 +3,20 @@ package com.ianm1647.everlastingcompat;
 import com.ianm1647.everlastingcompat.ability.config.radius.apotheosis.AbilitySunderingConfig;
 import com.ianm1647.everlastingcompat.ability.config.radius.ars_elemental.*;
 import com.ianm1647.everlastingcompat.ability.config.radius.ars_nouveau.*;
+import com.ianm1647.everlastingcompat.ability.config.radius.atmospheric.AbilityWorseningConfig;
 import com.ianm1647.everlastingcompat.ability.config.radius.cyclic.*;
+import com.ianm1647.everlastingcompat.ability.config.radius.phantasmic.AbilityStasisConfig;
+import com.ianm1647.everlastingcompat.ability.config.radius.unusualend.AbilityEnderInfectionConfig;
+import com.ianm1647.everlastingcompat.ability.config.radius.upgrade_aquatic.AbilityVibingConfig;
 import com.ianm1647.everlastingcompat.ability.config.self.alexsmobs.*;
 import com.ianm1647.everlastingcompat.ability.config.self.apotheosis.AbilityAncientKnowledgeConfig;
 import com.ianm1647.everlastingcompat.ability.config.self.ars_nouveau.*;
+import com.ianm1647.everlastingcompat.ability.config.self.atmospheric.AbilityReliefConfig;
 import com.ianm1647.everlastingcompat.ability.config.self.cyclic.*;
 import com.ianm1647.everlastingcompat.ability.config.self.deeperdarker.AbilitySculkAffinityConfig;
+import com.ianm1647.everlastingcompat.ability.config.self.infernalexp.AbilityLuminanceConfig;
+import com.ianm1647.everlastingcompat.ability.config.self.upgrade_aquatic.*;
+import com.ianm1647.everlastingcompat.ability.config.self.windswept.AbilityThornsConfig;
 import com.ianm1647.everlastingcompat.proxy.ClientProxy;
 import com.ianm1647.everlastingcompat.proxy.CommonProxy;
 import com.mojang.logging.LogUtils;
@@ -85,7 +93,8 @@ public class EverlastingCompat extends ModBaseVersionable<EverlastingCompat> {
             handler.addConfigurable(new AbilityFreezingConfig());
         }
         if (ModList.get().isLoaded("atmospheric")) {
-
+            handler.addConfigurable(new AbilityReliefConfig());
+            handler.addConfigurable(new AbilityWorseningConfig());
         }
         if (ModList.get().isLoaded("cyclic")) {
             handler.addConfigurable(new AbilityAntiGravityConfig());
@@ -103,23 +112,23 @@ public class EverlastingCompat extends ModBaseVersionable<EverlastingCompat> {
         if (ModList.get().isLoaded("deeperdarker")) {
             handler.addConfigurable(new AbilitySculkAffinityConfig());
         }
-        if (ModList.get().isLoaded("enlightened_end")) {
-
-        }
         if (ModList.get().isLoaded("infernalexp")) {
-
+            handler.addConfigurable(new AbilityLuminanceConfig());
         }
         if (ModList.get().isLoaded("nourished_nether")) {
-
+            handler.addConfigurable(new AbilityStasisConfig());
         }
         if (ModList.get().isLoaded("unusualend")) {
-
+            handler.addConfigurable(new AbilityEnderInfectionConfig());
         }
         if (ModList.get().isLoaded("upgrade_aquatic")) {
-
+            handler.addConfigurable(new AbilityInsomniaConfig());
+            handler.addConfigurable(new AbilityRepellenceConfig());
+            handler.addConfigurable(new AbilityRestfulnessConfig());
+            handler.addConfigurable(new AbilityVibingConfig());
         }
         if (ModList.get().isLoaded("windswept")) {
-
+            handler.addConfigurable(new AbilityThornsConfig());
         }
     }
 
